@@ -1,6 +1,6 @@
 # Aplikasi Absensi dengan QR Code
 
-Ini adalah aplikasi frontend dari aplikasi absensi dengan QR Code, aplikasi backend dengan Node JS dapat dilihat di https://github.com/joco-ding/absensi-api-qrcode.git
+Ini adalah aplikasi frontend untuk aplikasi absensi dengan QR Code, aplikasi backend dengan Node JS dapat dilihat di https://github.com/joco-ding/absensi-api-qrcode.git
 
 ## Cara Install
 
