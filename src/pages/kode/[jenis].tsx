@@ -27,12 +27,12 @@ function QRCodePage() {
   }
 
   useEffect(() => {
-    if (typeof data.role !== 'string') {
+    if (typeof data.peran !== 'string') {
       console.log(JSON.stringify({ data }))
       router.push('/')
       return
     }
-    if (data.role !== 'admin') {
+    if (data.peran !== 'admin') {
       console.log(JSON.stringify({ data }))
       router.push('/')
       return

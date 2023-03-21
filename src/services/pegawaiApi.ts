@@ -21,7 +21,7 @@ export const loginApi = async (email: string, password: string) => {
   }
 }
 
-export const profilSaya = async () => {
+export const profil = async () => {
   const response = await fetch(`${API_BASE_URL}/pegawai/profil`, {
     headers: {
       'Authorization': getToken(),
@@ -35,14 +35,14 @@ export const profilSaya = async () => {
   }
 }
 
-export const registrasiPegawai = async (nama: string, email: string, password: string, role: string) => {
+export const registrasiPegawai = async (nama: string, email: string, password: string, peran: string) => {
   const response = await fetch(`${API_BASE_URL}/pegawai`, {
     method: 'POST',
     headers: {
       'Authorization': getToken(),
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ nama, email, password, role }),
+    body: JSON.stringify({ nama, email, password, peran }),
   });
 
   if (response.ok) {

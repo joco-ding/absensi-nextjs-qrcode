@@ -9,7 +9,7 @@ import { semuaPegawai } from '@/services/pegawaiApi';
 interface UserProfile {
   nama: string;
   email: string;
-  role: string;
+  peran: string;
 }
 
 function DaftarPegawai() {
@@ -55,7 +55,7 @@ function DaftarPegawai() {
               <TableRow>
                 <TableCell>Nama</TableCell>
                 <TableCell>Email</TableCell>
-                <TableCell>Role</TableCell>
+                <TableCell>Peran</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -63,7 +63,7 @@ function DaftarPegawai() {
                 <TableRow key={pegawai.email}>
                   <TableCell>{pegawai.email}</TableCell>
                   <TableCell>{pegawai.nama}</TableCell>
-                  <TableCell>{pegawai.role}</TableCell>
+                  <TableCell>{pegawai.peran}</TableCell>
                 </TableRow>
               )
               )}

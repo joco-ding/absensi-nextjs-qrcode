@@ -8,7 +8,7 @@ function RegistrasiPegawai() {
   const [nama, setNama] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [role, setRole] = useState<string>('pegawai');
+  const [peran, setPeran] = useState<string>('pegawai');
   const [alertOpen, setAlertOpen] = useState<boolean>(false);
   const [alertType, setAlertType] = useState<'success' | 'error'>('success');
   const [alertMessage, setAlertMessage] = useState<string>('');
@@ -17,7 +17,7 @@ function RegistrasiPegawai() {
     event.preventDefault();
 
     try {
-      const respon = await registrasiPegawai(nama, email, password, role);
+      const respon = await registrasiPegawai(nama, email, password, peran);
       console.log('Registrasi berhasil:', respon);
 
       setAlertType('success');
@@ -27,7 +27,7 @@ function RegistrasiPegawai() {
       setNama('');
       setEmail('');
       setPassword('');
-      setRole('pegawai');
+      setPeran('pegawai');
     } catch (error) {
       console.error('Terjadi kesalahan:', error);
 
@@ -43,12 +43,12 @@ function RegistrasiPegawai() {
     setter(event.target.value);
   };
 
-  const handleRoleChange = (
+  const handlePeranChange = (
     event: React.MouseEvent<HTMLElement>,
-    newRole: string
+    peranBaru: string
   ) => {
-    if (newRole !== null) {
-      setRole(newRole);
+    if (peranBaru !== null) {
+      setPeran(peranBaru);
     }
   };
 
@@ -86,14 +86,14 @@ function RegistrasiPegawai() {
             required
           />
 
-          <InputLabel htmlFor="role" margin="dense">
-            Role
+          <InputLabel htmlFor="peran" margin="dense">
+            Peran
           </InputLabel>
           <ToggleButtonGroup
-            value={role}
+            value={peran}
             exclusive
-            onChange={handleRoleChange}
-            aria-labelledby="role"
+            onChange={handlePeranChange}
+            aria-labelledby="peran"
             fullWidth
             sx={{ mt: 2 }}
           >

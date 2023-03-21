@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 interface UserProfile {
   nama: string;
   email: string;
-  role: string;
+  peran: string;
 }
 
 const ProfilePage: React.FC = () => {
@@ -39,7 +39,7 @@ const ProfilePage: React.FC = () => {
             <strong>Email:</strong> {user.email}
           </Typography>
           <Typography variant="body1">
-            <strong>Role:</strong> {user.role}
+            <strong>Peran:</strong> {user.peran}
           </Typography>
         </Paper>
       </Container>

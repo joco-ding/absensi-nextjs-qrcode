@@ -27,7 +27,7 @@ function LoginPage() {
       const respon = await profilSaya();
       if (typeof respon.data === 'object') {
         dispatch(setData(respon.data))
-        if (typeof respon.data.role === 'string') {
+        if (typeof respon.data.peran === 'string') {
           return true
         }
       }

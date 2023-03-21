@@ -9,18 +9,18 @@ interface SidebarProps {
 }
 
 const allMenuItems = [
-  { text: 'Profil', href: '/profil', roles: ['admin', 'pegawai'] },
-  { text: 'Absen', href: '/absen', roles: ['pegawai'] },
-  { text: 'Kode Datang', href: '/kode/datang', roles: ['admin'] },
-  { text: 'Kode Pulang', href: '/kode/pulang', roles: ['admin'] },
-  { text: 'Daftar Kehadiran', href: '/daftar-kehadiran', roles: ['admin'] },
-  { text: 'Daftar Pegawai', href: '/daftar-pegawai', roles: ['admin'] },
-  { text: 'Registrasi Pegawai', href: '/registrasi-pegawai', roles: ['admin'] },
-  { text: 'Keluar', href: '/login?logout=true', roles: ['admin', 'pegawai'] },
+  { text: 'Profil', href: '/profil', perans: ['admin', 'pegawai'] },
+  { text: 'Absen', href: '/absen', perans: ['pegawai'] },
+  { text: 'Kode Datang', href: '/kode/datang', perans: ['admin'] },
+  { text: 'Kode Pulang', href: '/kode/pulang', perans: ['admin'] },
+  { text: 'Daftar Kehadiran', href: '/daftar-kehadiran', perans: ['admin'] },
+  { text: 'Daftar Pegawai', href: '/daftar-pegawai', perans: ['admin'] },
+  { text: 'Registrasi Pegawai', href: '/registrasi-pegawai', perans: ['admin'] },
+  { text: 'Keluar', href: '/login?logout=true', perans: ['admin', 'pegawai'] },
 ];
 
 const Sidebar: React.FC<SidebarProps> = ({ open, onClose }) => {
-  const [role, setRole] = useState('pegawai')
+  const [peran, setPeran] = useState('pegawai')
   const data = useSelector((state: any) => state.data.data)
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
@@ -28,16 +28,16 @@ const Sidebar: React.FC<SidebarProps> = ({ open, onClose }) => {
 
   useEffect(() => {
     const cekProfil = async () => {
-      if (typeof data === 'undefined' || typeof data.role === 'undefined') {
-        setRole('pegawai')
+      if (typeof data === 'undefined' || typeof data.peran === 'undefined') {
+        setPeran('pegawai')
         return
       }
-      setRole(data.role)
+      setPeran(data.peran)
     }
     cekProfil()
   }, [data])
   
-  const menuItems = allMenuItems.filter((item) => item.roles.includes(role));
+  const menuItems = allMenuItems.filter((item) => item.perans.includes(peran));
   
   return (
     <Drawer
