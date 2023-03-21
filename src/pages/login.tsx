@@ -62,6 +62,7 @@ function LoginPage() {
   const handleSubmit = async (event: { preventDefault(): void }) => {
     event.preventDefault();
 
+    setLoading(true)
     try {
       const respon = await loginApi(email, password);
       console.log('Login berhasil:', respon);
