@@ -32,8 +32,8 @@ export const absenKehadiran = async (kode: string, jenis: string) => {
   }
 }
 
-export const semuaKehadiran = async (page: number = 1) => {
-  const response = await fetch(`${API_BASE_URL}/kehadiran?page=${page}`, {
+export const semuaKehadiran = async (halaman: number = 1) => {
+  const response = await fetch(`${API_BASE_URL}/kehadiran?halaman=${halaman}`, {
     headers: {
       'Authorization': getToken(),
     },

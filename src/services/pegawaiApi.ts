@@ -52,8 +52,8 @@ export const registrasiPegawai = async (nama: string, email: string, password: s
   }
 }
 
-export const semuaPegawai = async (page: number = 1) => {
-  const response = await fetch(`${API_BASE_URL}/pegawai?page=${page}`, {
+export const semuaPegawai = async (halaman: number = 1) => {
+  const response = await fetch(`${API_BASE_URL}/pegawai?halaman=${halaman}`, {
     headers: {
       'Authorization': getToken(),
     },
