@@ -89,7 +89,6 @@ const DaftarKehadiran: React.FC = () => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>ID</TableCell>
                 <TableCell>Nama</TableCell>
                 <TableCell>Datang</TableCell>
                 <TableCell>Pulang</TableCell>
@@ -98,7 +97,6 @@ const DaftarKehadiran: React.FC = () => {
             <TableBody>
               {dataKehadiran.map((kehadiran) => (
                 <TableRow key={kehadiran._id}>
-                  <TableCell>{kehadiran._id}</TableCell>
                   <TableCell>{kehadiran.pegawai.nama}</TableCell>
                   <TableCell>{ubahTanggal(kehadiran.datang)}</TableCell>
                   <TableCell>{ubahTanggal(kehadiran.pulang)}</TableCell>

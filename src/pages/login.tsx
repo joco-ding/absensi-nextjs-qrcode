@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, TextField, Container, Typography, Box, Alert, Snackbar, CircularProgress } from '@mui/material';
-import { loginApi, profilSaya } from '@/services/pegawaiApi';
+import { loginApi, profil } from '@/services/pegawaiApi';
 import { useSelector, useDispatch } from 'react-redux';
 import { setData } from '@/services/store';
 import { useRouter } from 'next/router';
@@ -24,7 +24,7 @@ function LoginPage() {
         if (token === null) return false
         setToken(token)
       }
-      const respon = await profilSaya();
+      const respon = await profil();
       if (typeof respon.data === 'object') {
         dispatch(setData(respon.data))
         if (typeof respon.data.peran === 'string') {
