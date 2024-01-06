@@ -59,13 +59,18 @@ function DaftarPegawai() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {dataPegawai.map((pegawai) => (
-                <TableRow key={pegawai.email}>
-                  <TableCell>{pegawai.email}</TableCell>
-                  <TableCell>{pegawai.nama}</TableCell>
-                  <TableCell>{pegawai.peran}</TableCell>
+              {Array.isArray(dataPegawai) && dataPegawai.length > 0 ? (
+                dataPegawai.map((pegawai) => (
+                            <TableRow key={pegawai.email}>
+                              <TableCell>{pegawai.email}</TableCell>
+                              <TableCell>{pegawai.nama}</TableCell>
+                              <TableCell>{pegawai.peran}</TableCell>
+                            </TableRow>
+                          ))
+              ) : (
+                <TableRow>
+                  <TableCell colSpan={3} align="center">Tidak ada data pegawai</TableCell>
                 </TableRow>
-              )
               )}
             </TableBody>
           </Table>
