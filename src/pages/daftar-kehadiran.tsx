@@ -95,13 +95,19 @@ const DaftarKehadiran: React.FC = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {dataKehadiran.map((kehadiran) => (
-                <TableRow key={kehadiran._id}>
-                  <TableCell>{kehadiran.pegawai.nama}</TableCell>
-                  <TableCell>{ubahTanggal(kehadiran.datang)}</TableCell>
-                  <TableCell>{ubahTanggal(kehadiran.pulang)}</TableCell>
+              {Array.isArray(dataKehadiran) && dataKehadiran.length > 0 ? (
+                 dataKehadiran.map((kehadiran) => (
+                  <TableRow key={kehadiran._id}>
+                    <TableCell>{kehadiran.pegawai.nama}</TableCell>
+                    <TableCell>{ubahTanggal(kehadiran.datang)}</TableCell>
+                    <TableCell>{ubahTanggal(kehadiran.pulang)}</TableCell>
+                  </TableRow>
+                ))
+              ) : (
+                <TableRow>
+                  <TableCell colSpan={3} align="center">Tidak ada data kehadiran</TableCell>
                 </TableRow>
-              ))}
+              )}
             </TableBody>
           </Table>
         </TableContainer>
